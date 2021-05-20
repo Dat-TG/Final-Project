@@ -1,4 +1,4 @@
 ﻿  Source.cpp
-D:\Năm 1\Kì 2\1. Kĩ thuật lập trình (Programming Fudamentals)\[LT] - Final_Project\Final_Project\Final_Project\Source.cpp(8,1): warning C4005: 'max': macro redefinition
+C:\Users\PC\Desktop\Final Project\Final_Project\Source.cpp(8,1): warning C4005: 'max': macro redefinition
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(193): message : see previous definition of 'max'
-  Final_Project.vcxproj -> D:\Năm 1\Kì 2\1. Kĩ thuật lập trình (Programming Fudamentals)\[LT] - Final_Project\Final_Project\x64\Debug\Final_Project.exe
+  Final_Project.vcxproj -> C:\Users\PC\Desktop\Final Project\x64\Debug\Final_Project.exe

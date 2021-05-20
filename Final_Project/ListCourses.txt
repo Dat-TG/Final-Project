@@ -1,0 +1,20 @@
+2
+MTH001
+Dai so TT
+Le Van Hop
+4
+150
+hai
+s1
+tu
+s2
+1
+MTH003
+Toan roi rac
+Le Van Luyen
+4
+150
+nam
+s3
+thu sau
+s1

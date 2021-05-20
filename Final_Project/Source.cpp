@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <Windows.h>
 #include <stdlib.h>
 #include <fstream>
@@ -14,6 +14,7 @@
 #define ESC 27
 #define BACKSPACE 8
 #define SPACE 32
+#define FILECOURSES "ListCourses.txt"
 
 using namespace std;
 
@@ -113,7 +114,56 @@ char MENU_LOGIN[5][50] = { "1. Dang nhap - giao vien", "2. Dang nhap - hoc sinh"
 char MENU_GV[][100] = { "1. Tao nam hoc moi","2. Tao lop hoc moi", "3. Tao ki moi", "4. Tao khoa hoc moi", "5. Xuat danh sach khoa hoc", "6. Cap nhap thong tin khoa hoc" , "7. Xoa khoa hoc","8. Xuat bang diem danh sach khoa hoc", "9. Nhap diem" ,"10. Xuat bang diem theo danh sach lop"};
 char MENU_SV[][35] = { "1. Dang ky khoa hoc","2. Xuat khoa hoc da dang ky","3. Xoa khoa hoc khoi danh sach","4. Xem bang diem" };
 
+struct Course {
+	int Sememster;//1/2/3
+	char ID[20];
+	char Name[20];//Tên khóa học
+	char TeacherName[20];//Tên GV
+	int NumOfCredits;//số tín chỉ
+	int MaxNumOfStudents = 50;
+	PhienGio Session1;//Buổi học 1
+	PhienGio Session2;//Buổi học 2
+};
+
+void createNewCourse()
+{
+	fstream file;
+	file.open(FILECOURSES, ios::app);//Ghi tiếp ko ghi đè
+	Course a;
+	cout << "Nhap hoc ky: ";
+	cin >> a.Sememster; file << a.Sememster << endl;
+	cin.ignore();
+	cout << "Nhap ID khoa hoc: ";
+	cin.get(a.ID, 20, '\n'); file << a.ID << endl;
+	cin.ignore();
+	cout << "Nhap ten khoa hoc: ";
+	cin.get(a.Name, 20, '\n'); file << a.Name << endl;
+	cin.ignore();
+	cout << "Nhap ten giao vien: ";
+	cin.get(a.TeacherName, 20, '\n'); file << a.TeacherName << endl;
+	cout << "Nhap so tin chi: ";
+	cin >> a.NumOfCredits; file << a.NumOfCredits << endl;
+	cout << "Nhap so luong sinh vien toi da: ";
+	cin >> a.MaxNumOfStudents; file << a.MaxNumOfStudents << endl;
+	cin.ignore();
+	cout << "Nhap buoi hoc thu 1: ";
+	cout << "Thu: ";
+	cin.get(a.Session1.Thu, 10, '\n'); file << a.Session1.Thu << endl;
+	cout << "Gio: ";
+	cin.ignore();
+	cin.get(a.Session1.Gio, 30, '\n'); file << a.Session1.Gio << endl;
+	cin.ignore();
+	cout << "Nhap buoi hoc thu 2: ";
+	cout << "Thu: ";
+	cin.get(a.Session2.Thu, 10, '\n'); file << a.Session2.Thu << endl;
+	cout << "Gio: ";
+	cin.ignore();
+	cin.get(a.Session2.Gio, 30, '\n'); file << a.Session2.Gio << endl;
+	cin.ignore();
+}
+
 int main()
 {
-	
+	createNewCourse();
+	return 0;
 }
